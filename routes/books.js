@@ -76,6 +76,6 @@ router.delete('/books/:id', (req, res, next)=> {
     res.send(result[0]);
   }).catch((err)=> {
     console.error(err);
-  })
-})
+  });
+});
 module.exports = router;
