@@ -9,7 +9,6 @@ const humps = require('humps');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-
 router.post('/users', (req, res, next)=> {
   knex('users')
   .insert({
