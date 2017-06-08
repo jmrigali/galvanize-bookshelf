@@ -31,7 +31,6 @@
     "body-parser": "^1.17.2",
     "boom": "^3.2.2",
     "cookie-parser": "^1.4.3",
-    "env": "0.0.2",
     "express": "^4.15.3",
     "humps": "^1.1.0",
     "jsonwebtoken": "^7.4.1",
