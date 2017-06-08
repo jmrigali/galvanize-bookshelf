@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 
 // eslint-disable-next-line new-cap
@@ -11,7 +12,6 @@ const saltRounds = 10;
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const env = require('dotenv').config();
 
 
 router.get('/token', (req, res, next)=>{
