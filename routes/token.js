@@ -1,6 +1,6 @@
 'use strict';
 
-require('dotenv').config();
+
 const express = require('express');
 
 // eslint-disable-next-line new-cap

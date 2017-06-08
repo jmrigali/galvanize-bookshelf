@@ -2,6 +2,7 @@
 
 const express = require('express');
 
+
 // eslint-disable-next-line new-cap
 const router = express.Router();
 const knex = require('../knex');
@@ -11,7 +12,6 @@ const saltRounds = 10;
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const env = require('dotenv').config();
 
 
 router.get('/favorites', (req, res, next)=>{
