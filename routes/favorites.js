@@ -15,6 +15,9 @@ const env = require('dotenv').config();
 
 
 router.get('/favorites', (req, res, next)=>{
+  if(Object.keys(req.cookies).length === 0){
+    return res.sendStatus(401);
+  }
   knex('favorites')
   .innerJoin('books', 'book_id', 'books.id')
   .then((result)=>{
@@ -27,6 +30,9 @@ router.get('/favorites', (req, res, next)=>{
 });
 
 router.get('/favorites/check', (req, res, next)=>{
+  if(Object.keys(req.cookies).length === 0){
+    return res.sendStatus(401);
+  }
   knex('favorites')
   .innerJoin('books', 'book_id', 'books.id')
   .then((result)=>{
@@ -43,6 +49,9 @@ router.get('/favorites/check', (req, res, next)=>{
 });
 
 router.post('/favorites', (req, res, next)=>{
+  if(Object.keys(req.cookies).length === 0){
+    return res.sendStatus(401);
+  }
   knex('favorites')
   .insert({
     book_id: req.body.bookId,
@@ -62,6 +71,9 @@ router.post('/favorites', (req, res, next)=>{
 });
 
 router.delete('/favorites', (req, res, next)=>{
+  if(Object.keys(req.cookies).length === 0){
+    return res.sendStatus(401);
+  }
   knex('favorites')
   .where('book_id', req.body.bookId)
   .returning(['book_id','user_id'])
